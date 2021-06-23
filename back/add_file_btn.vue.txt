@@ -1,0 +1,1 @@
+<button type="button" class="btn btn-success btn-sm" v-b-modal.file-modal>Add File</button>

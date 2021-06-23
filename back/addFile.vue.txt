@@ -1,0 +1,36 @@
+	addFile(payload) {
+	  const path = 'http://localhost:5000/files';
+	  axios.post(path, payload)
+		.then(() => {
+		  this.getFiles();
+		})
+		.catch((error) => {
+		  // eslint-disable-next-line
+		  console.log(error);
+		  this.getFiles();
+		});
+	},
+	initForm() {
+	  this.addFileForm.title = '';
+	  this.addFileForm.author = '';
+	  this.addFileForm.read = [];
+	},
+	onSubmit(evt) {
+	  evt.preventDefault();
+	  this.$refs.addFileModal.hide();
+	  let read = false;
+	  if (this.addFileForm.read[0]) read = true;
+	  const payload = {
+		title: this.addFileForm.title,
+		author: this.addFileForm.author,
+		read, // property shorthand
+	  };
+	  this.addFile(payload);
+	  this.initForm();
+	},
+	onReset(evt) {
+	  evt.preventDefault();
+	  this.$refs.addFileModal.hide();
+	  this.initForm();
+	},
+	},
