@@ -54,6 +54,7 @@ pip install Flask-Cors;
 pip install flask_marshmallow;
 
 
+
 open a postgress DB
 
 user: postgre
@@ -66,6 +67,7 @@ db name: file_manager
 (In file_manager folder) run:
 
 python run.py
+
 
 
 client side:
